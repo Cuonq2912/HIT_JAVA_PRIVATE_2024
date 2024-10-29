@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Buoi4/Buoi4.iml" filepath="$PROJECT_DIR$/Buoi4/Buoi4.iml" />
       <module fileurl="file://$PROJECT_DIR$/HIT_JAVA_SQL_2024.iml" filepath="$PROJECT_DIR$/HIT_JAVA_SQL_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KiemTraSo1/KiemTraSo1.iml" filepath="$PROJECT_DIR$/KiemTraSo1/KiemTraSo1.iml" />
     </modules>
   </component>
 </project>

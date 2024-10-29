@@ -19,7 +19,6 @@ public class BaiTap2 {
                 maxSum = Math.max(maxSum, sum);
             }
         }
-
         return maxSum;
     }
 
@@ -34,14 +33,11 @@ public class BaiTap2 {
         for(int i = 0; i < n; i++) {
             a[i] = sc.nextLong();
         }
-
         System.out.println("Tong lon nhat cua day con co it nhat " + k + " phan tu la: " + solve(a, n, k));
     }
 }
 
-
 /*
  Cho một mảng số nguyên arr có n phần tử và một số nguyên k,
  hãy tìm tổng lớn nhất của bất kỳ dãy con liên tiếp nào chứa ít nhất k phần tử.
-
  */
