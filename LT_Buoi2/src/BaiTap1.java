@@ -1,4 +1,4 @@
-package Buoi2;
+package LT_Buoi2;
 
 import java.util.HashMap;
 import java.util.Map;
