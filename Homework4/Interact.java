@@ -5,17 +5,16 @@ public class Interact {
     static Scanner sn = new Scanner(System.in);
     static ArrayList<Book> books = new ArrayList<>();
 
-    public Interact(){
-        books = new ArrayList<>();
-    }
     // Thêm sách mới
     public static void addBook(){
         Book new_book = Book.newBook(sn);
         books.add(new_book);
+        System.out.println("Thêm sách vào danh sách thành công!");
     }
+
     // Cập nhật thông tin sách
     public static void updateBook(){
-        System.out.println("Nhập mã sách muốn chỉnh sửa: ");
+        System.out.print("Nhập mã sách muốn chỉnh sửa: ");
         int maSach  = sn.nextInt();
         sn.nextLine();
 
@@ -37,22 +36,20 @@ public class Interact {
             bookWantUpdate.setNamSanXuat(new_book.getNamSanXuat());
             bookWantUpdate.setTomtatNoiDung(new_book.getTomtatNoiDung());
             bookWantUpdate.setGiaTien(new_book.getGiaTien());
-            System.out.println("Thông tin sách sau chỉnh sửa: ");
-            System.out.println(bookWantUpdate);
+            System.out.println("Chỉnh sửa thành công!!");
         }
     }
+
     // In danh sách các sách
     public static void printList(){
-        if(books.size() == 0){
-            System.out.println("Danh sachs rỗng");
-        }
+        if(books.isEmpty()) System.out.println("Danh sách rỗng");
         else{
-            System.out.println("Các cuốn sách hiện có trong danh sách là: ");
             for(Book book : books){
                 book.Display();
             }
         }
     }
+
     // In các sách lâu đời nhất
     public static void printOlderBooks(){
         int oldestAge = Integer.MAX_VALUE;
@@ -66,9 +63,10 @@ public class Interact {
             }
         }
     }
+
     // Tìm sách gần nhất với giá tiền người dùng nhập vào
     public static void printBookWithCost(){
-        System.out.println("Nhập giá tiền: ");
+        System.out.print("Nhập giá tiền: ");
         int cost = sn.nextInt();
         int nearestCost = Integer.MAX_VALUE;
         for(Book book : books){
@@ -81,9 +79,10 @@ public class Interact {
             }
         }
     }
+
     // Sắp xếp sách theo giá tiền tăng dần
     public static void sortByPrice(){
-        for(int i = 0; i < books.size(); i++){
+        for(int i = 0; i < books.size() - 1; i++){
             for(int j = i + 1; j < books.size(); j++){
                 if(books.get(i).getGiaTien() > books.get(j).getGiaTien()){
                     Book tmp = books.get(i);
@@ -92,10 +91,13 @@ public class Interact {
                 }
             }
         }
+        System.out.println("Danh sách sau khi sắp xếp tăng dần theo giá tiền là: ");
+        printList();
     }
+
     // Sắp xếp sách theo tên sách tăng dần
     public static void sortByName(){
-        for(int i = 0; i < books.size(); i++){
+        for(int i = 0; i < books.size() - 1; i++){
             for(int j = i + 1; j < books.size(); j++){
                 if(books.get(i).getTenSach().compareToIgnoreCase(books.get(j).getTenSach()) > 0){
                     Book tmp = books.get(i);
@@ -104,6 +106,8 @@ public class Interact {
                 }
             }
         }
+        System.out.println("Danh sách sau khi sắp xếp tăng dần theo tên là:");
+        printList();
     }
 }
 

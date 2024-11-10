@@ -90,24 +90,24 @@ public class Book {
     public static Book newBook(Scanner sn){
         System.out.println("Nhập thông tin cho cuốn sách: ");
 
-        System.out.println("Nhập mã sách :");
+        System.out.print("Nhập mã sách :");
         int maSach = sn.nextInt();
         sn.nextLine();
 
-        System.out.println("Nhập tên sách: ");
+        System.out.print("Nhập tên sách: ");
         String tenSach = sn.nextLine();
 
-        System.out.println("Nhập tên tác giả: ");
+        System.out.print("Nhập tên tác giả: ");
         String tenTacGia = sn.nextLine();
 
-        System.out.println("Nhập năm sản xuất: ");
+        System.out.print("Nhập năm sản xuất: ");
         int namSanXuat = sn.nextInt();
         sn.nextLine();
 
-        System.out.println("Nhâp nội dung tóm tắt: ");
+        System.out.print("Nhâp nội dung tóm tắt: ");
         String ndTomTat = sn.nextLine();
 
-        System.out.println("Nhập giá tiền: ");
+        System.out.print("Nhập giá tiền: ");
         double giaTien = sn.nextDouble();
         sn.nextLine();
 
