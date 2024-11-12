@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Book {
     protected int maSach;
     protected String tenSach;
-    protected String tenTacGia;
+    protected Author tenTacGia;
     protected int namSanXuat;
     protected String tomtatNoiDung;
     protected double giaTien;
@@ -13,7 +13,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(int maSach, String tenSach, String tenTacGia, int namSanXuat, String tomtatNoiDung, double giaTien) {
+    public Book(int maSach, String tenSach, Author tenTacGia, int namSanXuat, String tomtatNoiDung, double giaTien) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tenTacGia = tenTacGia;
@@ -21,6 +21,8 @@ public class Book {
         this.tomtatNoiDung = tomtatNoiDung;
         this.giaTien = giaTien;
     }
+
+
 
     public int getMaSach() {
         return maSach;
@@ -38,11 +40,11 @@ public class Book {
         this.tenSach = tenSach;
     }
 
-    public String getTenTacGia() {
+    public Author getTenTacGia() {
         return tenTacGia;
     }
 
-    public void setTenTacGia(String tenTacGia) {
+    public void setTenTacGia(Author tenTacGia) {
         this.tenTacGia = tenTacGia;
     }
 
@@ -75,7 +77,7 @@ public class Book {
         return "Book{" +
                 "maSach=" + maSach +
                 ", tenSach='" + tenSach + '\'' +
-                ", tenTacGia='" + tenTacGia + '\'' +
+                ", TacGia='" + tenTacGia.toString() + '\'' +
                 ", namSanXuat=" + namSanXuat +
                 ", tomtatNoiDung='" + tomtatNoiDung + '\'' +
                 ", giaTien=" + giaTien +
@@ -97,8 +99,8 @@ public class Book {
         System.out.print("Nhập tên sách: ");
         String tenSach = sn.nextLine();
 
-        System.out.print("Nhập tên tác giả: ");
-        String tenTacGia = sn.nextLine();
+        System.out.print("Nhập thông tin tác giả: ");
+        Author tenTacGia = Author.NewAuthor();
 
         System.out.print("Nhập năm sản xuất: ");
         int namSanXuat = sn.nextInt();

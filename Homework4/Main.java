@@ -4,13 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in);
-        Interact.books.add(new Book(01, "Cấu trúc dữ liệu và Giải thuật", "Nguyễn Văn X", 2000, "Tổng quan về ctdl & gt", 100000));
-        Interact.books.add(new Book(02, "Lập trình Java cơ bản", "Trần Thị Y", 2015, "Giới thiệu ngôn ngữ lập trình Java", 150000));
-        Interact.books.add(new Book(03, "Kỹ thuật lập trình C++", "Nguyễn Thị A", 2018, "Hướng dẫn lập trình từ cơ bản đến nâng cao trong C++", 200000));
-        Interact.books.add(new Book(04, "Cơ sở dữ liệu", "Lê Văn B", 2012, "Tổng quan về cơ sở dữ liệu và SQL", 175000));
-        Interact.books.add(new Book(05, "Hệ điều hành", "Hoàng Văn C", 2010, "Cấu trúc và hoạt động của các hệ điều hành phổ biến", 180000));
-        Interact.books.add(new Book(06, "Mạng máy tính", "Phạm Văn D", 2013, "Các nguyên lý cơ bản và mô hình mạng máy tính", 160000));
-
+//        Interact.books.add(new Book(01, "Cấu trúc dữ liệu và Giải thuật", "Nguyễn Văn X", 2000, "Tổng quan về ctdl & gt", 100000));
+//        Interact.books.add(new Book(02, "Lập trình Java cơ bản", "Trần Thị Y", 2015, "Giới thiệu ngôn ngữ lập trình Java", 150000));
+//        Interact.books.add(new Book(03, "Kỹ thuật lập trình C++", "Nguyễn Thị A", 2018, "Hướng dẫn lập trình từ cơ bản đến nâng cao trong C++", 200000));
+//        Interact.books.add(new Book(04, "Cơ sở dữ liệu", "Lê Văn B", 2012, "Tổng quan về cơ sở dữ liệu và SQL", 175000));
+//        Interact.books.add(new Book(05, "Hệ điều hành", "Hoàng Văn C", 2010, "Cấu trúc và hoạt động của các hệ điều hành phổ biến", 180000));
+//        Interact.books.add(new Book(06, "Mạng máy tính", "Phạm Văn D", 2013, "Các nguyên lý cơ bản và mô hình mạng máy tính", 160000));
+        Interact.books.add(new Book(07, "Lập trình Python", new Author("Cuong", 20), 2024, "Introduce about python", 1350000));
         while(true){
             System.out.println("\n---------------------------Menu------------------------------");
             int choice;
