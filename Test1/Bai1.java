@@ -1,3 +1,4 @@
+package Test1;
 
 import java.util.Scanner;
 public class Bai1 {

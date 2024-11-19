@@ -1,3 +1,5 @@
+package LT_Buoi3;
+
 public class Time {
     private int hour;
     private int minute;

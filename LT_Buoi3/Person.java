@@ -1,3 +1,5 @@
+package LT_Buoi3;
+
 public class Person {
     private String name;
     //từ khóa "this" tham chiếu đến thể hiện của lớp đang thực thi,

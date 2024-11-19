@@ -1,3 +1,5 @@
+package LT_Buoi3;
+
 public class Student {
     // Attributes object should be private
     private String name;

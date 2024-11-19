@@ -1,3 +1,5 @@
+package LT_Buoi3;
+
 public class Car {
     // Attributes
     String name;
