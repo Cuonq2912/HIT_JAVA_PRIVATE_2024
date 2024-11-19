@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Buoi4/Buoi4.iml" filepath="$PROJECT_DIR$/Buoi4/Buoi4.iml" />
       <module fileurl="file://$PROJECT_DIR$/HIT_JAVA_SQL_2024.iml" filepath="$PROJECT_DIR$/HIT_JAVA_SQL_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Homework5/Homework5.iml" filepath="$PROJECT_DIR$/Homework5/Homework5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KiemTraSo1/KiemTraSo1.iml" filepath="$PROJECT_DIR$/KiemTraSo1/KiemTraSo1.iml" />
     </modules>
   </component>
 </project>
