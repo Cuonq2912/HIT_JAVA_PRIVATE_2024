@@ -1,4 +1,4 @@
-package Homework2.src;
+package Homework2;
 import java.util.Scanner;
 
 public class BaiTap2 {

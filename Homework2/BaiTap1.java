@@ -1,4 +1,4 @@
-package Buoi3.src;
+package Homework2;
 
 import java.util.Scanner;
 
