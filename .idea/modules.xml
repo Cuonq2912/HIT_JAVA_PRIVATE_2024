@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BT_Buoi6/BT_Buoi6.iml" filepath="$PROJECT_DIR$/BT_Buoi6/BT_Buoi6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Buoi4/Buoi4.iml" filepath="$PROJECT_DIR$/Buoi4/Buoi4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LT_Buoi6/CarManagement/CarManagement.iml" filepath="$PROJECT_DIR$/LT_Buoi6/CarManagement/CarManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/HIT_JAVA_SQL_2024.iml" filepath="$PROJECT_DIR$/HIT_JAVA_SQL_2024.iml" />
       <module fileurl="file://$PROJECT_DIR$/Homework5/Homework5.iml" filepath="$PROJECT_DIR$/Homework5/Homework5.iml" />
       <module fileurl="file://$PROJECT_DIR$/KiemTraSo1/KiemTraSo1.iml" filepath="$PROJECT_DIR$/KiemTraSo1/KiemTraSo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LT_Buoi5/LT_Buoi5.iml" filepath="$PROJECT_DIR$/LT_Buoi5/LT_Buoi5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LT_Buoi6/LT_Buoi6.iml" filepath="$PROJECT_DIR$/LT_Buoi6/LT_Buoi6.iml" />
     </modules>
   </component>
 </project>

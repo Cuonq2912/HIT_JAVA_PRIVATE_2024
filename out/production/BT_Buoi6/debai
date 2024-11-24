@@ -1,0 +1,10 @@
+quản lý thành viên clb tin học HIT
+User: id, tên, email, password, age, birth, role
+Admin: id, tên, email, password, age, birth, role
+
+
+thực hiện thêm xóa (chỉ khi đăng nhập với role la admin),
+hiển thị thông tin thành viên
+
+đúng email, pw: đăng nhập thành công
+role.equal(admin) -> xóa
