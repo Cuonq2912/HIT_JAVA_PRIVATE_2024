@@ -18,20 +18,24 @@ public class IUserserviceImpl implements IUserservice {
     }
 
     @Override
-    public void login(Scanner scanner){
-        System.out.print("Enter email: ");
-        String email = scanner.nextLine();
-        System.out.print("Enter pw: ");
-        String passWord = scanner.nextLine();
+    public void login(Scanner scanner) throws Exception{
+        try{
+            System.out.print("Enter email: ");
+            String email = scanner.nextLine();
+            System.out.print("Enter pw: ");
+            String passWord = scanner.nextLine();
 
-        for(User user : userList){
-            if(user.getEmail().equals(email) && user.getPassWord().equals(passWord)){
-                currentUser = user;
-                System.out.println("Login successfully!!!");
-                return;
+            for (User user : userList) {
+                if (user.getEmail().equals(email) && user.getPassWord().equals(passWord)) {
+                    currentUser = user;
+                    System.out.println("Login successfully!!!");
+                    return;
+                }
             }
+            System.out.println("Invalid Email or Password!!!");
+        } catch (Exception e) {
+
         }
-        System.out.println("Invalid Email or Password!!!");
     }
 
     public IUserserviceImpl(ArrayList<User> listUser) {
@@ -39,12 +43,11 @@ public class IUserserviceImpl implements IUserservice {
     }
 
 
-    public void logout(){
-        if(currentUser != null){
+    public void logout() {
+        if (currentUser != null) {
             System.out.println("Log out successfully!");
             currentUser = null;
-        }
-        else{
+        } else {
             System.out.println("No user is currently logged in!!!");
         }
     }
@@ -52,7 +55,7 @@ public class IUserserviceImpl implements IUserservice {
 
     @Override
     public boolean addMember(User user) {
-        if(isAdmin()){
+        if (isAdmin()) {
             userList.add(user);
             return true;
         }
@@ -78,17 +81,17 @@ public class IUserserviceImpl implements IUserservice {
 
     @Override
     public void display() {
-        if(userList.isEmpty()){
+        if (userList.isEmpty()) {
             System.out.println("No member found!");
-        }
-        else {
+        } else {
             System.out.println("Member List: ");
-            for(User user : userList){
+            for (User user : userList) {
                 user.display();
             }
         }
     }
-    private boolean isAdmin(){
+
+    private boolean isAdmin() {
 //        if(currentUser != null && currentUser.getRole() == Role.ADMIN){
 //            return true;
 //        }
