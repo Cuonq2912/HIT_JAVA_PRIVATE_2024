@@ -1,8 +1,5 @@
 package model;
 
-import java.sql.SQLOutput;
-import java.util.Scanner;
-
 public abstract class Product {
     private String id;
     private String name;
@@ -53,16 +50,12 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product: " +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                '}';
-    }
-    public void display(){
-        System.out.println(toString());
+                ", ";
     }
     public abstract double totalPrice();
-
 }

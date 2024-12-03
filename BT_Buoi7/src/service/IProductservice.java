@@ -1,11 +1,10 @@
 package service;
-
-import model.Product;
+import java.util.Scanner;
 
 public interface IProductservice {
-    public boolean addProduct(Product product);
-    public boolean deleteProduct(String id);
-    public boolean updateProduct(String id);
-    public boolean display();
-    public boolean findWithNameProduct(String name);
+    boolean addProduct(Scanner sn) throws Exception;
+    boolean deleteById(String id);
+    boolean updateProductByID(String id);
+    void display();
+    boolean searchByName(String name);
 }

@@ -67,9 +67,4 @@ public class User {
                 ", role=" + role +
                 '}';
     }
-
-    public void display(){
-        System.out.println(toString());
-    }
-
 }
