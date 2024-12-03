@@ -57,5 +57,6 @@ public abstract class Product {
                 ", quantity=" + quantity +
                 ", ";
     }
+
     public abstract double totalPrice();
 }

@@ -1,10 +1,11 @@
 import model.Role;
 import service.impl.IProductserviceIMPL;
 import service.impl.IUserserviceIMPL;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-
     private static final Scanner sn = new Scanner(System.in);
     private static final IProductserviceIMPL productManagement = new IProductserviceIMPL();
     private static final IUserserviceIMPL user = new IUserserviceIMPL();
@@ -15,91 +16,107 @@ public class Main {
         if(user.getCurrentUser().getRole().equals(Role.ADMIN)){
             while(isRunning){
                 adminMenu();
-                int choice = sn.nextInt();
+                int choice = 0;
+                try{
+                    choice = sn.nextInt();
+                } catch (InputMismatchException e){
+                    System.out.println(e.getMessage());
+                }
                 sn.nextLine();
-
                 switch (choice){
                     case 1:
-                        if(productManagement.addProduct(sn)) System.out.println("Add product successfully!!");
-                        else System.out.println("Add product unsuccessfully");
+                        if(productManagement.addProduct(sn)) System.out.println("Add product successfully!!!");
+                        else System.out.println("Add product unsuccessfully!!!");
                         break;
                     case 2:
-                        productManagement.display();
-                        System.out.println("Display successfully!");
+                        System.out.println("Nhap id san pham muon xoa: ");
+                        String id = sn.nextLine();
+                        if(productManagement.deleteByID(id)) System.out.println("Delete product successfully!!!");
+                        else System.out.println("Delete product unsuccessfully!!!");
                         break;
                     case 3:
-                        SearchProductByName();
+                        System.out.println("Nhap id san pham muon cap nhat: ");
+                        String id2 = sn.nextLine();
+                        if(productManagement.updateByID(id2)) System.out.println("Update product successfully!!!");
+                        else System.out.println("Update product unsuccessfully!!!");
                         break;
                     case 4:
-                        System.out.println("Nhap id cua san pham muon xoa: ");
-                        String id = sn.nextLine();
-                        if(productManagement.deleteById(id)) System.out.println("Xoa thanh cong!!!");
-                        else System.out.println("Khong tim thay san pham co id " + id);
+                        searchProduct();
                         break;
                     case 5:
-                        System.out.println("Nhap id san pham muon cap nhat: ");
-                        String idUpdate = sn.nextLine();
-                        if(productManagement.updateProductByID(idUpdate)) System.out.println("Cap nhat thanh cong");
-                        else System.out.println("Khong tim thay san pham co id " + idUpdate);
+                        displayAllProduct();
                         break;
                     case 6:
-                        ExitProgram();
                         isRunning = false;
+                        exit();
                         break;
                     default:
-                        System.out.println("lua chon khong hop le!. Nhap lai");
+                        System.out.println("Invalid choice. Please enter a number between 1 and 6.");
                 }
             }
         }
         else{
             while(isRunning){
                 userMenu();
-                int choice = sn.nextInt();
+                int choice = 0;
+                try{
+                    choice = sn.nextInt();
+                }catch (InputMismatchException e){
+                    System.out.println(e.getMessage());
+                }
                 sn.nextLine();
                 switch (choice){
                     case 1:
-                        productManagement.display();
-                        System.out.println("Display successfully!");
+                        searchProduct();
                         break;
                     case 2:
-                        SearchProductByName();
+                        displayAllProduct();
                         break;
                     case 3:
-                        ExitProgram();
                         isRunning = false;
+                        exit();
                         break;
                     default:
-                        System.out.println("lua chon khong hop le!. Nhap lai");
+                        System.out.println("Invalid choice. Please enter a number between 1 and 3.");
                 }
             }
         }
+
     }
 
     public static void adminMenu(){
-        System.out.println("===================QUẢN LÝ SẢN PHẨM===================");
-        System.out.println("1. Thêm sản phẩm");
-        System.out.println("2. Hiển thị danh sách");
-        System.out.println("3. Tìm kiếm sản phẩm bằng tên");
-        System.out.println("4. Xóa sản phẩm bằng id");
-        System.out.println("5. Cập nhập sản phẩm bằng id");
-        System.out.println("6. Thoát chương trình");
+        System.out.println("------------------------ADMIN-----------------------");
+        System.out.println("1. Add Product");
+        System.out.println("2. Delete Product");
+        System.out.println("3. Update Product");
+        System.out.println("4. Search Product");
+        System.out.println("5. Display All Products");
+        System.out.println("6. Exit");
+        System.out.println("Enter your choice");
     }
+
     public static void userMenu(){
-        System.out.println("=================USER OPERATIONS================");
-        System.out.println("1. Hiển thị danh sách sản phẩm");
-        System.out.println("2. Tìm sản phẩm bằng tên");
-        System.out.println("3. Thoát chương trình");
+        System.out.println("----------------------USER---------------------------");
+        System.out.println("1. Search Product");
+        System.out.println("2. Display All Products");
+        System.out.println("3. Exit");
+        System.out.println("Enter your choice");
     }
 
-    public static void SearchProductByName(){
-        System.out.println("Nhập tên sản phẩm muốn tìm kiếm!");
+    public static void searchProduct(){
+        System.out.println("Nhap ten san pham muon tim: ");
         String name = sn.nextLine();
-        if(productManagement.searchByName(name)) System.out.println("Da tim thay");
-        else System.out.println("Khong tim thay san pham co ten " + name);
+        if(productManagement.searchByName(name)) System.out.println("Search product successfully!!!");
+        else System.out.println("Search product unsuccessfully!!!");
     }
 
-    public static void ExitProgram(){
-        System.out.println("Da thoat chuong trinh");
+    public static void displayAllProduct(){
+        productManagement.display();
+        System.out.println("Display product successfully!!!");
+    }
+
+    public static void exit(){
+        System.out.println("Existing program....");
         System.exit(0);
     }
 }

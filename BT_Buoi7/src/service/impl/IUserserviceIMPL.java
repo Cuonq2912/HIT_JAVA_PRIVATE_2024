@@ -1,19 +1,20 @@
 package service.impl;
+
 import model.Role;
 import model.User;
+import service.IUserservice;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class IUserserviceIMPL implements service.IUserservice {
+public class IUserserviceIMPL implements IUserservice {
     Scanner sn = new Scanner(System.in);
-
-    private final ArrayList<User> userList = new ArrayList<User>();
+    private final ArrayList<User> users = new ArrayList<>();
     private User currentUser;
 
     public IUserserviceIMPL() {
-        userList.add(new User("u001", "Admin", "admin", "admin123", Role.ADMIN));
-        userList.add(new User("u002", "User", "user", "user123", Role.USER));
+        users.add(new User("U001", "Admin", "admin", "admin123", Role.ADMIN));
+        users.add(new User("U002", "User", "user", "user123", Role.USER));
     }
 
     public User getCurrentUser() {
@@ -23,27 +24,26 @@ public class IUserserviceIMPL implements service.IUserservice {
     @Override
     public void login() {
         System.out.println("Enter username: ");
-        String userName = sn.nextLine();
+        String username = sn.nextLine();
         System.out.println("Enter password: ");
-        String passWord = sn.nextLine();
+        String password = sn.nextLine();
 
-        for(User user : userList){
-            if(user.getUserName().equals(userName) && user.getPassWord().equals(passWord)){
-                System.out.println("Login successfully!!");
+        for(User user: users){
+            if(user.getUserName().equals(username) && user.getPassWord().equals(password)){
                 currentUser = user;
+                System.out.println("Login successfully!!!");
                 return;
             }
         }
-        System.out.println("Invalid name or password!!!");
+        System.out.println("Invalid username or password!!!");
     }
 
     @Override
     public void logout() {
         if(currentUser != null){
-            System.out.println("Logout successfully!");
+            System.out.println("log out successfully!");
             currentUser = null;
         }
-        else System.out.println("No user is currently logged in!!");
+        System.out.println("No user is currenly log in!");
     }
-
 }

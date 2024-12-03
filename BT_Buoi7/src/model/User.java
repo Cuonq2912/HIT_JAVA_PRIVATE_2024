@@ -10,11 +10,11 @@ public class User {
     public User() {
     }
 
-    public User(String id,  String fullName,  String userName, String passWord, Role role) {
+    public User(String id, String fullName, String userName, String passWord, Role role) {
         this.id = id;
         this.fullName = fullName;
-        this.userName = userName;
         this.passWord = passWord;
+        this.userName = userName;
         this.role = role;
     }
 
@@ -64,6 +64,7 @@ public class User {
                 "id='" + id + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
                 ", role=" + role +
                 '}';
     }
