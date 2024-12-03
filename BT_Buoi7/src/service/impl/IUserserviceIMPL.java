@@ -32,10 +32,9 @@ public class IUserserviceIMPL implements service.IUserservice {
                 System.out.println("Login successfully!!");
                 currentUser = user;
                 return;
-            } else System.out.println("Invalid name or password!!!");
+            }
         }
-
-
+        System.out.println("Invalid name or password!!!");
     }
 
     @Override
