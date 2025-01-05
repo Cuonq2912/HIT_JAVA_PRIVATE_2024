@@ -1,0 +1,2 @@
+Nhiệm vụ của Fatorymethod là quản lý và trả về những đối tượng theo đúng những gì được yêu cầu, sẽ giúp việc khởi tạo đối tượng linh hoạt hơn.
+cho phép các lớp con quyết định loại đối tượng nào sẽ được tạo ra tại thời điểm chạy, thay vì xác định cụ thể trong mã nguồn.

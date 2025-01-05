@@ -8,17 +8,15 @@ import service.IAccountService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class IAccountServiceImpl implements IAccountService {
     Scanner sn = new Scanner(System.in);
-    List<Account> accountList = new ArrayList<>();
-    Account currentAccount = null;
-
-
-    public IAccountServiceImpl() {
+    private List<Account> accountList;
+    public IAccountServiceImpl(){
+        this.accountList = new ArrayList<>();
     }
+    Account currentAccount = null;
 
     @Override
     public List<Account> getAllAccount() {
@@ -56,6 +54,7 @@ public class IAccountServiceImpl implements IAccountService {
             newAge = sn.nextInt();
         } catch (IllegalArgumentException e){
             System.out.println("Age is invalid!!!");
+            return;
         }
         account.setAge(newAge);
 
@@ -86,6 +85,12 @@ public class IAccountServiceImpl implements IAccountService {
             System.out.println("Invalid status!!!");
             return;
         }
+    }
+
+    @Override
+    public void addAccount(Account account) {
+        accountList.add(account);
+        System.out.println("Add account successfully!");
     }
 
     private boolean isDuplicateID(String id){
