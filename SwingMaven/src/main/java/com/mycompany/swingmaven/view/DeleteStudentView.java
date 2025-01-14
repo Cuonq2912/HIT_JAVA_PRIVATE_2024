@@ -12,6 +12,7 @@ import javax.swing.table.TableModel;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,6 +36,9 @@ public class DeleteStudentView extends javax.swing.JFrame {
         students = query.getResultList();
 
         TableModel tableModel = content.getModel();
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tableModel;
+        defaultTableModel.setRowCount(students.size());
+        
         for(int i = 0; i < students.size(); i++){
             Student student = students.get(i);
             
@@ -96,7 +100,7 @@ public class DeleteStudentView extends javax.swing.JFrame {
         // Chon 'OK' tra ve gia tri 0 
         if(ansFromUser == 0){
             int selectedRow = content.getSelectedRow();
-            Student student = students.get(selectedRow);
+            Student student = this.students.get(selectedRow);
                
             var db = HibernateUtil.getEntityManager();
 

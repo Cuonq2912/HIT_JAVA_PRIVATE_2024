@@ -20,10 +20,11 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
-@Table(name = "student")
+//@Table(name = "student")
 public class Student {
     @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     int id;
     @Column(columnDefinition = "varchar(60)", nullable = false)
     String name;
